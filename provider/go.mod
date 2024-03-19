@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-youtrack-native/provider
+module github.com/oss4u/pulumi-youtrack-native/provider
 
 go 1.20
 
