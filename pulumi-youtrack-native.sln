@@ -5,11 +5,11 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sdk", "sdk", "{FB4C2415-BFF7-4FE2-803B-9BE086FF4FAE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pulumi.Xyz", "sdk\dotnet\Pulumi.Xyz.csproj", "{E183E017-D554-4069-997A-B732ED901C99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pulumi.Youtrack", "sdk\dotnet\Pulumi.Youtrack.csproj", "{E183E017-D554-4069-997A-B732ED901C99}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{9B4FDCC2-CF8E-4E91-94B2-2581318F798B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "provider-xyz-native", "examples\dotnet\provider-xyz-native.csproj", "{839971F3-64B1-4E6A-815B-D6C47114F6C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "provider-youtrack-native", "examples\dotnet\provider-Youtrack-native.csproj", "{839971F3-64B1-4E6A-815B-D6C47114F6C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nodejs", "nodejs", "{909F2AB3-5BAE-4F61-BE8C-CEC76EB5530A}"
 EndProject

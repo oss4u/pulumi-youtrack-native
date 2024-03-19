@@ -1,13 +1,13 @@
-name: provider-xyz-native
+name: provider-youtrack-native
 runtime: yaml
 plugins:
   providers:
-    - name: xyz
+    - name: youtrack
       path: ../../bin
 
 resources:
   myRandomResource:
-    type: xyz:Random
+    type: youtrack:Random
     properties:
       length: 24
 
