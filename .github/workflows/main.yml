@@ -5,7 +5,7 @@ on:
       - main
 
 env:
-  PROVIDER: "teamcity"
+  PROVIDER: "youtrackty"
   GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 
 jobs:

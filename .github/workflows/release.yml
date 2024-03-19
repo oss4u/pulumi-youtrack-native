@@ -47,9 +47,9 @@ jobs:
         uses: actions/checkout@v2
       - name: Unshallow clone for tags
         run: |
-          mkdir -p /__w/pulumi-youtrackty-native/pulumi-youtrackty-native
-          sudo chown -R $(whoami) /__w/pulumi-youtrackty-native/pulumi-youtrackty-native
-          git config --global --add safe.directory /__w/pulumi-youtrackty-native/pulumi-youtrackty-native
+          mkdir -p /__w/pulumi-youtrack-native/pulumi-youtrack-native
+          sudo chown -R $(whoami) /__w/pulumi-youtrack-native/pulumi-youtrack-native
+          git config --global --add safe.directory /__w/pulumi-youtrack-native/pulumi-youtrack-native
           git fetch --prune --unshallow --tags
       - name: Install Go
         uses: actions/setup-go@v2
@@ -88,10 +88,11 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Unshallow clone for tags
-          mkdir -p /__w/pulumi-youtrackty-native/pulumi-youtrackty-native
-          sudo chown -R $(whoami) /__w/pulumi-youtrackty-native/pulumi-youtrackty-native
-          git config --global --add safe.directory /__w/pulumi-youtrackty-native/pulumi-youtrackty-native
-        run: git fetch --prune --unshallow --tags
+        run: |
+          mkdir -p /__w/pulumi-youtrack-native/pulumi-youtrack-native
+          sudo chown -R $(whoami) /__w/pulumi-youtrack-native/pulumi-youtrack-native
+          git config --global --add safe.directory /__w/pulumi-youtrack-native/pulumi-youtrack-native
+          git fetch --prune --unshallow --tags
       - name: Install Go
         uses: actions/setup-go@v2
         with:
