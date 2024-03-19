@@ -20,25 +20,71 @@ import (
 
 	p "github.com/pulumi/pulumi-go-provider"
 	"github.com/pulumi/pulumi-go-provider/infer"
+	"github.com/pulumi/pulumi-go-provider/middleware/schema"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 )
 
 // Version is initialized by the Go linker to contain the semver of this build.
 var Version string
 
-const Name string = "xyz"
+const Name string = "youtrack"
 
 func Provider() p.Provider {
-	// We tell the provider what resources it needs to support.
-	// In this case, a single custom resource.
-	return infer.Provider(infer.Options{
+	prv := infer.Provider(infer.Options{
+		Metadata: schema.Metadata{
+			DisplayName: "YouTrack",
+			License:     "Apache-2.0",
+			Repository:  "https://github.com/oss4u/pulumi-youtrack-native",
+			Publisher:   "Oss4u",
+			LanguageMap: map[string]any{
+				"nodejs": map[string]any{
+					"packageName": "@oss4u/youtrack",
+				},
+				"go": map[string]any{
+					"generateResourceContainerTypes": true,
+					"importBasePath":                 "github.com/oss4u/pulumi-youtrack-native/sdk/go/youtrack",
+				},
+				"csharp": map[string]any{
+					"rootNamespace": "Oss4u",
+				},
+			},
+			PluginDownloadURL: "github://api.github.com/oss4u/pulumi-youtrack-native",
+		},
+		// Resources: []infer.InferredResource{
+		// 	infer.Resource[unbound.HostAliasOverride, unbound.HostAliasOverrideArgs, unbound.HostAliasOverrideState](),
+		// 	infer.Resource[unbound.HostOverride, unbound.HostOverrideArgs, unbound.HostOverrideState](),
+		// },
 		Resources: []infer.InferredResource{
 			infer.Resource[Random, RandomArgs, RandomState](),
 		},
 		ModuleMap: map[tokens.ModuleName]tokens.ModuleName{
 			"provider": "index",
 		},
+		// Config: infer.Config[*config.Config](),
 	})
+	prv.DiffConfig = diff()
+	return prv
+
+	// We tell the provider what resources it needs to support.
+	// In this case, a single custom resource.
+	// return infer.Provider(infer.Options{
+	// 	Resources: []infer.InferredResource{
+	// 		infer.Resource[Random, RandomArgs, RandomState](),
+	// 	},
+	// 	ModuleMap: map[tokens.ModuleName]tokens.ModuleName{
+	// 		"provider": "index",
+	// 	},
+	// })
+}
+
+func diff() func(ctx p.Context, req p.DiffRequest) (p.DiffResponse, error) {
+	return func(ctx p.Context, req p.DiffRequest) (p.DiffResponse, error) {
+		return p.DiffResponse{
+			DeleteBeforeReplace: false,
+			HasChanges:          false,
+			DetailedDiff:        nil,
+		}, nil
+	}
 }
 
 // Each resource has a controlling struct.
