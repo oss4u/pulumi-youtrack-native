@@ -28,7 +28,7 @@ env:
   # NEED TO CHANGE TO USE THE CORRECT PASSWORD
   PYPI_PASSWORD: ${{ secrets.PYPI_TOKEN }}
   PYPI_USERNAME: "oss4u"
-  PYPI_REPOSITORY_URL: ""
+  PYPI_REPOSITORY_URL: "https://pypi.org/"
   PUBLISH_PYPI: true
 jobs:
   publish_binary:
@@ -143,7 +143,7 @@ jobs:
           cp sdk/${{ matrix.language }}/bin/dist/*.tar.gz dist/
       - if: ${{ matrix.language == 'python' && env.PUBLISH_PYPI == 'true' }}
         name: Publish package to PyPI
-        uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
           password: ${{ env.PYPI_PASSWORD }}
