@@ -32,9 +32,9 @@ jobs:
       name: Unshallow clone for tags
       id: tags
       run: |
-        mkdir -p /__w/pulumi-youtrack-native/pulumi-youtrackty-native
-        sudo chown -R $(whoami) /__w/pulumi-youtrackty-native/pulumi-youtrackty-native
-        git config --global --add safe.directory /__w/pulumi-youtrackty-native/pulumi-youtrackty-native
+        mkdir -p /__w/pulumi-youtrack-native/pulumi-youtrack-native
+        sudo chown -R $(whoami) /__w/pulumi-youtrack-native/pulumi-youtrack-native
+        git config --global --add safe.directory /__w/pulumi-youtrack-native/pulumi-youtrack-native
         git fetch --prune --unshallow --tags
     -
       name: Build
