@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/pulumi/pulumi-youtrack-native/sdk/go/youtrack"
+	"github.com/oss4u/pulumi-youtrack-native/sdk/go/youtrack"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 

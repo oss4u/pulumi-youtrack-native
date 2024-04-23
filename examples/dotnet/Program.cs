@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Pulumi;
-using Youtrack = Pulumi.Youtrack;
+using Youtrack = Oss4u.Youtrack;
 
 return await Deployment.RunAsync(() => 
 {

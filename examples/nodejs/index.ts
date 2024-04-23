@@ -1,7 +1,7 @@
 import * as pulumi from "@pulumi/pulumi";
-import * as xyz from "@pulumi/xyz";
+import * as youtrack from "@oss4u/youtrack";
 
-const myRandomResource = new xyz.Random("myRandomResource", {length: 24});
+const myRandomResource = new youtrack.Random("myRandomResource", {length: 24});
 export const output = {
     value: myRandomResource.result,
 };
